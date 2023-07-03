@@ -7,19 +7,19 @@ name: Manual workflow
 on:
  schedule:
     # 每天16:15执行，使用 cron 表达式
-    - cron: '15 16 * * *'
+    - cron: '25 08 * * *'
 
 #   workflow_dispatch:
 #     # Inputs the workflow accepts.
 #     inputs:
 #       name:
-#         # Friendly description to be shown in the UI instead of 'name'
+# #         # Friendly description to be shown in the UI instead of 'name'
 #         description: 'Person to greet'
-#         # Default value if no value is explicitly provided
+# #         # Default value if no value is explicitly provided
 #         default: 'World'
-#         # Input has to be provided for the workflow to run
+# #         # Input has to be provided for the workflow to run
 #         required: true
-#         # The data type of the input
+# #         # The data type of the input
 #         type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
