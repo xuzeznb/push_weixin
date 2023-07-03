@@ -20,13 +20,24 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
+  # 任务的名称
+  run-project:
+    # 任务运行的环境，这里使用 ubuntu-latest
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # 任务中的一系列步骤，称为 steps
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+      # 第一步，使用 actions/checkout@v2 来获取仓库中的代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # 第二步，使用 actions/setup-node@v2 来安装 node 环境
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          # 指定 node 的版本，这里使用 14.x
+          node-version: '14.x'
+      # 第三步，使用 npm install 来安装项目依赖
+      - name: Install dependencies
+        run: npm install
+      # 第四步，使用 npm start 来运行项目
+      - name: Run project
+        run: npm start
