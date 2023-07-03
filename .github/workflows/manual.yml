@@ -7,7 +7,7 @@ name: Manual workflow
 on:
  schedule:
     # 每天16:15执行，使用 cron 表达式
-    - cron: '25 08 * * *'
+    - cron: '31 08 * * *'
 
 #   workflow_dispatch:
 #     # Inputs the workflow accepts.
