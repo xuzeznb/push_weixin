@@ -5,7 +5,7 @@ name: Run node project
 on:
   schedule:
     # 每天6点执行，使用 cron 表达式
-    - cron: '0 6 * * *'
+    - cron: '0 16 * * *'
 
 # 工作流中的一个或多个任务，称为 jobs
 jobs:
