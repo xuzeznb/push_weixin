@@ -1,0 +1,32 @@
+# 工作流的名称
+name: Run node project
+
+# 工作流的触发条件，这里使用 schedule 来设置定时触发
+on:
+  schedule:
+    # 每天6点执行，使用 cron 表达式
+    - cron: '0 6 * * *'
+
+# 工作流中的一个或多个任务，称为 jobs
+jobs:
+  # 任务的名称
+  run-project:
+    # 任务运行的环境，这里使用 ubuntu-latest
+    runs-on: ubuntu-latest
+    # 任务中的一系列步骤，称为 steps
+    steps:
+      # 第一步，使用 actions/checkout@v2 来获取仓库中的代码
+      - name: Checkout code
+        uses: actions/checkout@v2
+      # 第二步，使用 actions/setup-node@v2 来安装 node 环境
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          # 指定 node 的版本，这里使用 14.x
+          node-version: '14.x'
+      # 第三步，使用 npm install 来安装项目依赖
+      - name: Install dependencies
+        run: npm install
+      # 第四步，使用 npm start 来运行项目
+      - name: Run project
+        run: npm start
