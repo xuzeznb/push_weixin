@@ -3,7 +3,7 @@ const { default: axios } = require("axios")
 const params = {
   appid: 'wx036b367f7139522b',
   secret: 'a303306c08aba6942e62496091f0c38f',
-  touser: 'oUch86LJcpPQEDuMWa9FliClqFtY',
+  touser: 'oUch86Gqjr9fwBFtuvVKc4vknqCk',
   // touser: 'oUch86PeOjj37i9TPrv6Luj3xf38',
   template_id: '2jI40bXjxdJUhtGD0iRaFIPueXjN9OpLmb3mqnhVzKg',
 }
